@@ -1,0 +1,300 @@
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  background-color: #f5f0e8;
+  color: #1a1608;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1a1608;
+  color: #f5f0e8;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid #8b4513;
+}
+
+.header-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d4e8d2;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #a09880;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- Dichotomous Step Cards --- */
+.key-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.step-card {
+  background-color: #fdfaf4;
+  border: 1px solid #c8be9e;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  scroll-margin-top: 20px;
+}
+
+.step-header {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #8b4513;
+  border-bottom: 1px solid #e2dcc8;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.choices-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Clickable Elements --- */
+.btn-choice {
+  display: block;
+  background-color: #ede8dc;
+  border: 1px solid #c8be9e;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #1a1608;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-choice:hover {
+  background-color: #d4e8d2;
+  border-color: #3d6b3a;
+  transform: translateX(4px);
+}
+
+.letter {
+  background-color: #3d6b3a;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #7a7160;
+  text-decoration: none;
+}
+.back-link:hover {
+  color: #8b4513;
+  text-decoration: underline;
+}
+
+/* --- The CSS Click Logic Engine --- */
+.click-gate {
+  display: none;
+}
+
+.result-box {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 1rem;
+  background-color: #d4e8d2;
+  border-left: 5px solid #3d6b3a;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-top: 0;
+}
+
+
+.click-gate:checked + .btn-choice + .result-box {
+  max-height: 400px;
+  opacity: 1;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.click-gate:checked + .btn-choice {
+  background-color: #3d6b3a;
+  color: white;
+}
+
+/* --- External BugGuide Links (Dichotomous Key Results) --- */
+.bugguide-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.bugguide-link h3 {
+  color: #1a1608;
+  transition: color 0.2s ease;
+}
+
+.bugguide-link:hover h3 {
+  color: #8b4513;
+  text-decoration: underline;
+}
+
+/* --- Reset Button Styling --- */
+.btn-reset {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #1a1608;
+  color: #f5f0e8;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  user-select: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-reset:hover {
+  background-color: #8b4513;
+}
+
+.btn-reset:active {
+  transform: scale(0.97);
+}
+
+
+.orders-gallery-section {
+  margin-top: 5rem;
+  border-top: 2px dashed #c8be9e;
+  padding-top: 3rem;
+}
+
+.gallery-title {
+  font-size: 1.6rem;
+  color: #1a1608;
+  margin-bottom: 0.2rem;
+}
+
+.gallery-subtitle {
+  font-size: 0.9rem;
+  color: #7a7160;
+  margin-bottom: 2rem;
+}
+
+/* Layout setup utilizing a 2-column grid on desktops, collapsing automatically on smaller panels */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Wraps the entire catalog card for seamless clicking link integration */
+.catalog-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  outline: none;
+}
+
+.catalog-card {
+  background-color: #fdfaf4;
+  border: 1px solid #e2dcc8;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  height: 100%;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover updates to show a link is ready to trigger */
+.catalog-card-link:hover .catalog-card {
+  border-color: #8b4513;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(139, 69, 19, 0.08);
+}
+
+.catalog-badge {
+  font-size: 2.2rem;
+  background-color: #ede8dc;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.catalog-content h3 {
+  font-size: 1.15rem;
+  color: #1a1608;
+  font-weight: 700;
+}
+
+.common-name {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #8b4513;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.catalog-content p {
+  font-size: 0.88rem;
+  color: #4a4232;
+  line-height: 1.4rem;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1a1608;
+  color: #6a7050;
+  font-size: 0.8rem;
+  margin-top: 4rem;
+}
