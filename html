@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insect Identification Guide</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header>
+      <div class="header-label">Entomology Field Guide</div>
+      <h1>Insect <em>Identification</em> Key</h1>
+      <p>Click the choices below to navigate the dichotomous key and identify your specimen.</p>
+    </header>
+
+    <main>
+      <div class="key-container">
+
+        <div class="step-card" id="step-1">
+          <div class="step-header">Step 1: Wing Check</div>
+          <p class="question">Does your insect specimen have visible wings?</p>
+
+          <div class="choices-layout">
+            <a href="#step-3" class="btn-choice">
+              <span class="letter">A</span> Yes, wings are visible (or tucked under covers)
+            </a>
+
+            <a href="#step-2" class="btn-choice">
+              <span class="letter">B</span> No, it is completely wingless
+            </a>
+          </div>
+        </div>
+
+        <div class="step-card" id="step-2">
+          <div class="step-header">Step 2: Wingless Profiles</div>
+          <p class="question">Look closely at the body shape and antennae:</p>
+
+          <div class="choices-layout">
+            <input type="checkbox" id="trigger-hymenoptera" class="click-gate">
+            <label for="trigger-hymenoptera" class="btn-choice">
+              <span class="letter">A</span> Distinct narrow waist, or elbowed antennae
+            </label>
+            <div class="result-box text-hymenoptera">
+              <a href="https://bugguide.net/node/view/59" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Hymenoptera (Ants / Wingless Wasps) 🌐</h3>
+              </a>
+              <p>Ants have a highly distinct pinched waist with nodes. Worker ants are entirely wingless but belong to this highly social order.</p>
+              <label for="trigger-hymenoptera" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+
+            <input type="checkbox" id="trigger-blattodea-wingless" class="click-gate">
+            <label for="trigger-blattodea-wingless" class="btn-choice">
+              <span class="letter">B</span> Broad flat body, long thread-like antennae
+            </label>
+            <div class="result-box text-blattodea">
+              <a href="https://bugguide.net/node/view/342386" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Blattodea (Cockroaches / Termites) 🌐</h3>
+              </a>
+              <p>Wingless roaches and termites have flat, oval-shaped bodies built for crawling through tight spaces and leaf litter.</p>
+              <label for="trigger-blattodea-wingless" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+          </div>
+          <a href="#step-1" class="back-link">← Back to Step 1</a>
+        </div>
+
+        <div class="step-card" id="step-3">
+          <div class="step-header">Step 3: Wing Count</div>
+          <p class="question">How many individual wings or pairs can you see?</p>
+
+          <div class="choices-layout">
+            <input type="checkbox" id="trigger-diptera" class="click-gate">
+            <label for="trigger-diptera" class="btn-choice">
+              <span class="letter">A</span> Only 1 pair of clear wings (plus 2 tiny balance knobs)
+            </label>
+            <div class="result-box text-diptera">
+              <a href="https://bugguide.net/node/view/51" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Diptera (True Flies) 🌐</h3>
+              </a>
+              <p>True flies unique trait is having only two wings. Their hind wings shrunk over millions of years into small flight stabilizers called halteres.</p>
+              <label for="trigger-diptera" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+
+            <a href="#step-4" class="btn-choice">
+              <span class="letter">B</span> 2 pairs of wings (4 wings total)
+            </a>
+          </div>
+          <a href="#step-1" class="back-link">← Back to Step 1</a>
+        </div>
+
+        <div class="step-card" id="step-4">
+          <div class="step-header">Step 4: Wing Texture</div>
+          <p class="question">Examine the texture of the outer front wings:</p>
+
+          <div class="choices-layout">
+            <input type="checkbox" id="trigger-coleoptera" class="click-gate">
+            <label for="trigger-coleoptera" class="btn-choice">
+              <span class="letter">A</span> Hard, shell-like covers meeting in a straight line down the back
+            </label>
+            <div class="result-box text-coleoptera">
+              <a href="https://bugguide.net/node/view/60" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Coleoptera (Beetles) 🌐</h3>
+              </a>
+              <p>Beetles modify their front wings into hard shields called elytra. They protect the delicate flight wings folded underneath them.</p>
+              <label for="trigger-coleoptera" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+
+            <input type="checkbox" id="trigger-orthoptera" class="click-gate">
+            <label for="trigger-orthoptera" class="btn-choice">
+              <span class="letter">B</span> Leathery, straight front wings & large jumping hind legs
+            </label>
+            <div class="result-box text-orthoptera">
+              <a href="https://bugguide.net/node/view/73" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Orthoptera (Grasshoppers & Crickets) 🌐</h3>
+              </a>
+              <p>Orthoptera means "straight wings." Their leathery forewings cover delicate fan-folding wings optimized for hopping escapes.</p>
+              <label for="trigger-orthoptera" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+
+            <a href="#step-5" class="btn-choice">
+              <span class="letter">C</span> Clear, thin, or colorful powdery wings
+            </a>
+          </div>
+          <a href="#step-3" class="back-link">← Back to Step 3</a>
+        </div>
+
+        <div class="step-card" id="step-5">
+          <div class="step-header">Step 5: Wing Surfaces</div>
+          <p class="question">Are the wings clear or covered in colorful dust?</p>
+
+          <div class="choices-layout">
+            <input type="checkbox" id="trigger-lepidoptera" class="click-gate">
+            <label for="trigger-lepidoptera" class="btn-choice">
+              <span class="letter">A</span> Covered in dusty, overlapping micro-scales
+            </label>
+            <div class="result-box text-lepidoptera">
+              <a href="https://bugguide.net/node/view/57" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Lepidoptera (Butterflies & Moths) 🌐</h3>
+              </a>
+              <p>The colored dust on a butterfly's wing is actually thousands of tiny scales that insulate the insect and generate vivid patterns.</p>
+              <label for="trigger-lepidoptera" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+
+            <input type="checkbox" id="trigger-odonata" class="click-gate">
+            <label for="trigger-odonata" class="btn-choice">
+              <span class="letter">B</span> Completely transparent with a heavy mesh grid of veins
+            </label>
+            <div class="result-box text-odonata">
+              <a href="https://bugguide.net/node/view/77" target="_blank" class="bugguide-link">
+                <h3>💥 Result: Order Odonata (Dragonflies & Damselflies) 🌐</h3>
+              </a>
+              <p>Ancient aviators with glass-like wings containing complex support networks. Excellent predatory speed flyers.</p>
+              <label for="trigger-odonata" class="btn-reset">🔄 Clear Selection</label>
+            </div>
+          </div>
+          <a href="#step-4" class="back-link">← Back to Step 4</a>
+        </div>
+
+      </div>
+
+      <div class="orders-gallery-section">
+        <h2 class="gallery-title">All Insect Orders Covered By This Key</h2>
+        <p class="gallery-subtitle">A quick-reference catalog of the key anatomical groups (Click any card to explore BugGuide).</p>
+
+        <div class="orders-grid">
+
+          <a href="https://bugguide.net/node/view/60" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🪲</div>
+              <div class="catalog-content">
+                <h3>Coleoptera</h3>
+                <span class="common-name">Beetles</span>
+                <p>The largest insect order on planet Earth. Recognized by hard protective shell-wings (elytra) that form a straight seam line perfectly down the spine.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/57" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🦋</div>
+              <div class="catalog-content">
+                <h3>Lepidoptera</h3>
+                <span class="common-name">Butterflies & Moths</span>
+                <p>Characterized by four broad wings completely covered in thousands of colorful, dust-like microscopic scales. Often have a rolled feeding tube mouth.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/51" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🪰</div>
+              <div class="catalog-content">
+                <h3>Diptera</h3>
+                <span class="common-name">True Flies & Mosquitoes</span>
+                <p>Uniquely equipped with only two functional flight wings. Their hind wings shrunk over time into two little clubbed balance anchors called halteres.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/59" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🐝</div>
+              <div class="catalog-content">
+                <h3>Hymenoptera</h3>
+                <span class="common-name">Bees, Wasps & Ants</span>
+                <p>Includes species with clear, dynamic hooked wing sets or completely wingless varieties (like workers). Best identified by an exceptionally narrow body waist.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/73" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🦗</div>
+              <div class="catalog-content">
+                <h3>Orthoptera</h3>
+                <span class="common-name">Grasshoppers & Crickets</span>
+                <p>Famous for muscular, elongated rear leg configurations tuned entirely for jumping. Have straight, leathery front armor wings shielding fan-like flight wings.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/77" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🐉</div>
+              <div class="catalog-content">
+                <h3>Odonata</h3>
+                <span class="common-name">Dragonflies & Damselflies</span>
+                <p>Stunning aerial predators with giant compound eyes covering their heads. Supported by two pairs of elongated, intricately net-veined transparent wings.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://bugguide.net/node/view/342386" target="_blank" class="catalog-card-link">
+            <div class="catalog-card">
+              <div class="catalog-badge">🪳</div>
+              <div class="catalog-content">
+                <h3>Blattodea</h3>
+                <span class="common-name">Cockroaches & Termites</span>
+                <p>Flat, low-profile oval shapes designed for crawling into leaf litter. Equipped with long, highly dynamic whip antennae and swift running legs.</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      Dichotomous System Guide — Developed for Code.org Web Lab
+    </footer>
+
+  </body>
+</html>
